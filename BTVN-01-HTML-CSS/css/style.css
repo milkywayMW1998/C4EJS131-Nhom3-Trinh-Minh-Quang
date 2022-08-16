@@ -1,0 +1,279 @@
+body {
+    font-family: 'Roboto', 'Lato', sans-serif;
+    font-size: 1.25rem;
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    background-image: url("https://resources.mindx.edu.vn/uploads/images/164243145_1879127655595491_2163594297157166535_n-1280.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.post-container {
+    padding: 0 22.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.profile-picture {
+    background-image: url(./images/avatar.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #8d8d8d;
+    border-radius: 50%;
+    width: 4.875rem;
+    height: 4.875rem;
+    margin-right: 1rem;
+}
+
+.header {
+    display: flex;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.categories a {
+    color: #e53636;
+    font-size: 1rem;
+    word-wrap: break-word;
+}
+
+a {
+    opacity: 1;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+img {
+    height: auto !important;
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    display: block;
+}
+
+.message {
+    text-align: center;
+    font-size: 1.667rem;
+    font-weight: 600;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    margin: 5px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.icon .icon-facebook {
+    border-radius: 50%;
+    background-color: #3b5998;
+    color: white;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 5px;
+}
+
+.icon .icon-twitter {
+    border-radius: 50%;
+    background-color: #00aced;
+    color: white;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 5px;
+}
+
+.block-slide {
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+    border-top: 2px solid #cecece;
+}
+
+.block-slide .title {
+    border-left: 5px solid #c00000;
+    line-height: 2rem;
+    padding-left: 0.5rem;
+    font-size: 1.5rem;
+    width: 100%;
+    font-weight: 600;
+
+}
+
+.footer-info {
+    background-color: #3e3e3c;
+    color: white;
+    padding: 45px;
+}
+
+.container {
+    width: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.layout-footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.about .title, .study-program .title, .hotline .title{
+    color: white;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.about .text, .study-program .text, .hotline .text{
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-style: normal;
+    color: white;
+}
+
+.img-logo{
+    max-height: 5rem;
+    width: 100%;
+}
+
+.list-location{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.city{
+    font-size: 18px;
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: white;
+    opacity: 0.4;
+}
+
+.footer .title {
+   font-size: 0.875rem;
+   line-height: 1.5rem;
+   margin-bottom: 0.5rem;
+   font-weight: bold;
+   color: white;
+}
+
+.latcation-text {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    margin: 0;
+    color: white;
+    opacity: 0.4;
+}
+.regions{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    padding: 45px;
+}
+
+.branch{
+    margin-right: 2rem;
+    width: 200px;
+    margin-bottom: 20px;
+    
+}
+
+.copyright{
+    text-align: center;
+    background-color: #c6c5c5;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    margin: 0;
+    color: black;
+    padding: 5px;
+}
+
+.navigation{
+    height: 100px;
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 4px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.navigation .container .a{
+    display: flex;
+}
+
+.navigation .nav{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-menu{
+    height: 50px;
+    width: auto;
+}
+
+.nav-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-right: 35px;
+
+}
+
+.nav-item .title{
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.menu{
+    display: flex;
+}
+
+.nav-item .title:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+.nav-item .title::after {
+   content: '';
+   display: block;
+   width: 0;
+   height: 4px;
+   background:#e8392e;
+   transition: width .3s;
+}
