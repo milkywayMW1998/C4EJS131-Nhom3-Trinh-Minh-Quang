@@ -14,7 +14,7 @@
 // Const không thể được cập nhật và khai báo lại
 // Không thể cập nhật và khai báo lại nghĩa là giá trị của biên không thể được thay đổi và không thể khai báo biến có trùng tên trong cùng phạm vi tồn tại
 // Giống với let, khai báo const được dịch chuyển lên đầu của đoạn mã nhưng không được khởi gán giá trị.
-
+// 
 
 //Giữa var, let, const có thể được tóm lược như sau:
 // + Khai báo var được định phạm vi toàn cục (global) hay hàm (function) trong khi let và const được định phạm vi là khối mã (block)
