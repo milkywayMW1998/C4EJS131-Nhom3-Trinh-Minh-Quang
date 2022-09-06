@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../BTVN-12-JS/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div style="height: 100%; padding: 150px;">
+    <div id="book-manager">
+      <div class="header-box">
+        <h1 class="title">Reading List</h1>
+        <p class="sub-title">Reading list in 2022</p>
+        <div class="input-group">
+          <div class="input-group-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div class="input-group-area"><input id="the-filter" type="text" placeholder="Search book"></div>
+        </div>
+        <div id="addForm">
+          <h2>Add Form</h2>
+          <div class="input-group book-name">
+            <label>Book Name</label>
+            <div class="input-group-area"><input id="book-name" type="text" placeholder="Book Name"></div>
+          </div>
+          <span class="btnAdd" onclick="addItem()">Submit</span>
+        </div>
+      </div>
+      <div style="padding: 20px; width: 100%;">
+        <h2>Books to Read</h2>
+        <ul id="the-list">
+          <li style="display: flex; align-items: center;">Lập trình web căn bản
+              <span class="btnEdit">Update</span>
+              <span class="btnDelete" onClick="deleteItem()">Delete</span>
+          </li>
+          <li style="display: flex; align-items: center;">Lập tình FullStack Web
+              <span class="btnEdit">Update</span>
+              <span class="btnDelete" onClick="deleteItem()">Delete</span>
+          </li>
+          <li style="display: flex; align-items: center;">Lập trình Mobile App
+              <span class="btnEdit">Update</span>
+              <span class="btnDelete" onClick="deleteItem()">Delete</span>
+          </li>
+          <li style="display: flex; align-items: center;">Lập trình Nodejs
+              <span class="btnEdit">Update</span>
+              <span class="btnDelete" onClick="deleteItem()">Delete</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+ <script src="../BTVN-12-JS/js/index.js"></script>  
+</body>
+</html>
