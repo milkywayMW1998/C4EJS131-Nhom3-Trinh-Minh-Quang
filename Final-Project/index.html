@@ -75,26 +75,25 @@
 
 
     <!-- Modal Cart -->
-    <div class="cartModal" data-modal>
+    <div id="cartModal" class="modal">
 
-        <div class="modal-close-overlay" data-modal-overlay></div>
-
+        <!-- Modal content -->
         <div class="modal-content">
-            <button class="modal-close-btn" data-modal-close>
-                <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="newsletter-img">
-                <img src="./assets/img/" alt="subscribe newsletter" width="400" height="400">
-            </div>
-
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Cart</h2>
+          </div>
+          <div class="modal-body">
             <table class="visible-cart table">
           
             </table>
             <div>Total price: $<span class="total-cart"></span></div>
+          </div>
+          <div class="modal-footer">
             <button class="clear-cart btn btn-danger">Clear Cart</button>
+          </div>
         </div>
-
+      
     </div>
       
 
