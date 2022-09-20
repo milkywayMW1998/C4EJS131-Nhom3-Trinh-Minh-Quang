@@ -117,18 +117,27 @@ var shoppingCart = (function() {
   var obj = {};
   // Add to cart (function đếm Add Item cart)
   obj.addItemToCart = function(name, price, count) {
-  for(var item in cart) {
-    console.log(item);
-    if(cart[item].name === name) {
-      cart[item].count ++;
-      saveCart();
-      return;
+    for(var item in cart) {
+      if(cart[item].name === name) {
+        cart[item].count ++;
+        saveCart();
+        return;
+      }
     }
-  }
     var item = new Item(name, price, count);
     cart.push(item);
     saveCart();
-  }
+  };
+
+  // Set count from item
+  obj.setCountForItem = function (name, count) {
+    for (var i in cart) {
+      if (cart[i].name === name) {
+        cart[i].count = count;
+        break;
+      }
+    }
+  };
 
   // Total All Cart
   obj.totalCart = function(){
@@ -137,7 +146,7 @@ var shoppingCart = (function() {
       totalCart += cart[item].price * cart[item].count;
     }
     return Number(totalCart.toFixed(2));
-  }
+  };
 
   // Count cart  (function đếm Item cart)
   obj.totalCount = function() {
@@ -150,33 +159,34 @@ var shoppingCart = (function() {
 
 // Remove item cart (dùng cho button giảm số lượng item)
 obj.removeItemCart = function (name) {
-   for(var item in cart){
-     if(cart[item].name === name){
-        cart[item].count --;
-        if(cart[item].count === 0){
-            cart.splice(item, 1);
-        }
-        break;
-     }
-   }
-}
-
-// Remove All item cart ( delete tất cả item của sản phẩm đã chọn)
-obj.removeAllItemCart = function(name){
-  for(var item in cart){
-    if(cart[item].name === name){
-       cart.splice(item, 1);
-       break;
+  for (var item in cart) {
+    if (cart[item].name === name) {
+      cart[item].count--;
+      if (cart[item].count === 0) {
+        cart.splice(item, 1);
+      }
+      break;
     }
   }
   saveCart();
-}
+};
+
+// Remove All item cart ( delete tất cả item của sản phẩm đã chọn)
+obj.removeAllItemCart = function(name){
+  for (var item in cart) {
+    if (cart[item].name === name) {
+      cart.splice(item, 1);
+      break;
+    }
+  }
+  saveCart();
+};
 
 // Clear cart
 obj.clearCart = function() {
   cart = [];
   saveCart();
-}
+};
   
 
 //List Cart (get List Item trong cart)
@@ -192,7 +202,7 @@ obj.listCart = function(){
      cartItem.push(itemCart)
    }
    return cartItem;
-}
+};
 
 
   return obj;
@@ -201,6 +211,7 @@ obj.listCart = function(){
 
 
 // Events
+// Add item
 $('.add-to-cart').click(function(event) {
   event.preventDefault();
   var name = $(this).data('name');
@@ -209,9 +220,15 @@ $('.add-to-cart').click(function(event) {
   displayCart();
 });
 
+
+// Clear items
+$(".clear-cart").click(function () {
+  shoppingCart.clearCart();
+  displayCart();
+});
+
 function displayCart() {
   var arrCart = shoppingCart.listCart();
-  console.log(arrCart);
   var stringContentCart = "";
     for (var i in arrCart) {
       stringContentCart += "<tr>"
@@ -235,23 +252,38 @@ function displayCart() {
 
 $('.visible-cart').on("click", ".delete-item", function(event) {
   var name = $(this).data('name')
-  shoppingCart.removeItemFromCartAll(name);
+  shoppingCart.removeAllItemCart(name);
   displayCart();
-})
+});
 
 
 // - Số lương item
-$('.visible-cart').on("click", ".minus-item", function(event) {
-  var name = $(this).data('name')
-  shoppingCart.removeItemFromCart(name);
+// $('.visible-cart').on("click", ".minus-item", function(event) {
+//   var name = $(this).data('name');
+//   shoppingCart.removeItemCart(name);
+//   displayCart();
+// });
+
+$('minus-item').click(function() {
+  alert("ok");
+  var name = $(this).data('name');
+  shoppingCart.removeItemCart(name);
   displayCart();
-})
+});
+
 // + Số lương item
-$('.visible-cart').on("click", ".plus-item", function(event) {
-  var name = $(this).data('name')
+// $('.visible-cart').on("click", ".plus-item", function(event) {
+//   var name = $(this).data('name');
+//   shoppingCart.addItemToCart(name);
+//   displayCart();
+// });
+
+$('plus-item').click(function() {
+  alert("ok");
+  var name = $(this).data('name');
   shoppingCart.addItemToCart(name);
   displayCart();
-})
+});
 
 // Item count input
 $('.visible-cart').on("change", ".item-count", function(event) {
