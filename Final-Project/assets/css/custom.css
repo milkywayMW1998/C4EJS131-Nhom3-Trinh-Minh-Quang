@@ -664,7 +664,7 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 10px;
 }
 
-.mobile-bottom-navigation .count {
+.mobile-bottom-navigation .count, .mobile-bottom-navigation .count-item-wl {
   background: var(--bittersweet);
   color: var(--white);
   position: absolute;

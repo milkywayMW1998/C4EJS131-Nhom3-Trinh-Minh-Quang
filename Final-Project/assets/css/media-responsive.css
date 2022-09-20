@@ -536,7 +536,7 @@
       padding: 5px;
     }
   
-    .header-user-actions .count {
+    .header-user-actions .count, .header-user-actions .count-item-wl {
       position: absolute;
       top: -2px;
       right: -3px;
