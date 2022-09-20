@@ -15,22 +15,24 @@
 
     <!-- media responsive (css responsive) -->
     <link rel="stylesheet" href="./assets/css/media-responsive.css">
-    
+
 
     <!-- google font link (link cdn font )-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    
+
     <!-- cdn font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <div class="overlay" data-overlay></div>
 
-    <!-- Modal -->
+    <!-- Modal CTA -->
     <div class="modal" data-modal>
 
         <div class="modal-close-overlay" data-modal-overlay></div>
@@ -71,34 +73,58 @@
 
     </div>
 
+
+    <!-- Modal Cart -->
+    <div id="cartModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Cart</h2>
+          </div>
+          <div class="modal-body">
+            <table class="show-cart table">
+          
+            </table>
+            <div>Total price: $<span class="total-cart"></span></div>
+          </div>
+          <!-- <div class="modal-footer">
+            
+          </div> -->
+        </div>
+      
+      </div>
+      
+
     <!-- NOTIFICATION -->
     <div class="notification-toast" data-toast>
 
         <button class="toast-close-btn" data-toast-close>
-          <ion-icon name="close-outline"></ion-icon>
+            <ion-icon name="close-outline"></ion-icon>
         </button>
-    
+
         <div class="toast-banner">
-          <img src="./assets/img/products/demo-product.png" alt="Rose Gold Earrings" width="80" height="70">
+            <img src="./assets/img/products/demo-product.png" alt="Rose Gold Earrings" width="80" height="70">
         </div>
-    
+
         <div class="toast-detail">
-    
-          <p class="toast-message">
-            Someone in new just bought
-          </p>
-    
-          <p class="toast-title">
-            Rose Gold Earrings
-          </p>
-    
-          <p class="toast-meta">
-            <time datetime="PT2M">2 Minutes</time> ago
-          </p>
-    
+
+            <p class="toast-message">
+                Someone in new just bought
+            </p>
+
+            <p class="toast-title">
+                Rose Gold Earrings
+            </p>
+
+            <p class="toast-meta">
+                <time datetime="PT2M">2 Minutes</time> ago
+            </p>
+
         </div>
-    
-      </div>
+
+    </div>
 
 
     <!-- Header -->
@@ -195,7 +221,7 @@
                         <span class="count-item-wl">0</span>
                     </button>
 
-                    <button class="action-btn">
+                    <button class="action-btn" id="cart-btn">
                         <ion-icon name="bag-handle-outline"></ion-icon>
                         <span class="count">0</span>
                     </button>
@@ -753,7 +779,8 @@
 
                     <div class="slider-item">
 
-                        <img src="./assets/img/Autouch-banner-01.png" alt="women's latest fashion sale" class="banner-img">
+                        <img src="./assets/img/Autouch-banner-01.png" alt="women's latest fashion sale"
+                            class="banner-img">
 
                         <div class="banner-content" style="display: none;">
 
@@ -1123,8 +1150,8 @@
                                 <button class="sidebar-accordion-menu" data-accordion-btn>
 
                                     <div class="menu-title-flex">
-                                        <img src="./assets/img/icons/jewelry.svg" alt="clothes"
-                                            class="menu-title-img" width="20" height="20">
+                                        <img src="./assets/img/icons/jewelry.svg" alt="clothes" class="menu-title-img"
+                                            width="20" height="20">
 
                                         <p class="menu-title">Jewelry</p>
                                     </div>
@@ -1168,8 +1195,8 @@
                                 <button class="sidebar-accordion-menu" data-accordion-btn>
 
                                     <div class="menu-title-flex">
-                                        <img src="./assets/img/icons/perfume.svg" alt="perfume"
-                                            class="menu-title-img" width="20" height="20">
+                                        <img src="./assets/img/icons/perfume.svg" alt="perfume" class="menu-title-img"
+                                            width="20" height="20">
 
                                         <p class="menu-title">Perfume</p>
                                     </div>
@@ -1272,8 +1299,8 @@
                                 <button class="sidebar-accordion-menu" data-accordion-btn>
 
                                     <div class="menu-title-flex">
-                                        <img src="./assets/img/icons/glasses.svg" alt="glasses"
-                                            class="menu-title-img" width="20" height="20">
+                                        <img src="./assets/img/icons/glasses.svg" alt="glasses" class="menu-title-img"
+                                            width="20" height="20">
 
                                         <p class="menu-title">Glasses</p>
                                     </div>
@@ -1372,8 +1399,8 @@
                                 <div class="showcase">
 
                                     <a href="#" class="showcase-img-box">
-                                        <img src="./assets/img/products/demo-product.png" alt="baby fabric shoes" width="75"
-                                            height="75" class="showcase-img">
+                                        <img src="./assets/img/products/demo-product.png" alt="baby fabric shoes"
+                                            width="75" height="75" class="showcase-img">
                                     </a>
 
                                     <div class="showcase-content">
@@ -1850,8 +1877,8 @@
                                     <div class="showcase">
 
                                         <a href="#" class="showcase-img-box">
-                                            <img src="./assets/img/products/demo-product.png" alt="Boot With Suede Detail"
-                                                class="showcase-img" width="70">
+                                            <img src="./assets/img/products/demo-product.png"
+                                                alt="Boot With Suede Detail" class="showcase-img" width="70">
                                         </a>
 
                                         <div class="showcase-content">
@@ -2360,7 +2387,7 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action add-to-cart">
+                                        <button class="btn-action add-to-cart" data-name="Mens Winter Leathers Jackets" data-price="48.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
 
@@ -2396,10 +2423,10 @@
                             <div class="showcase">
 
                                 <div class="showcase-banner">
-                                    <img src="./assets/img/products/demo-product.png" alt="Pure Garment Dyed Cotton Shirt"
-                                        class="product-img default" width="300">
-                                    <img src="./assets/img/products/demo-product.png" alt="Pure Garment Dyed Cotton Shirt"
-                                        class="product-img hover" width="300">
+                                    <img src="./assets/img/products/demo-product.png"
+                                        alt="Pure Garment Dyed Cotton Shirt" class="product-img default" width="300">
+                                    <img src="./assets/img/products/demo-product.png"
+                                        alt="Pure Garment Dyed Cotton Shirt" class="product-img hover" width="300">
 
                                     <p class="showcase-badge angle black">sale</p>
 
@@ -2416,7 +2443,7 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action add-to-cart">
+                                        <button class="btn-action add-to-cart" data-name="Pure Garment Dyed Cotton Shirt" data-price="45.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
                                     </div>
@@ -2467,7 +2494,7 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action add-to-cart">
+                                        <button class="btn-action add-to-cart" data-name="MEN Yarn Fleece Full-Zip Jacket" data-price="58.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
                                     </div>
@@ -2520,7 +2547,7 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action add-to-cart">
+                                        <button class="btn-action add-to-cart" data-name="Black Floral Wrap Midi Skirt" data-price="25.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
                                     </div>
@@ -2571,7 +2598,7 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action add-to-cart">
+                                        <button class="btn-action add-to-cart" data-name="Casual Men's Brown shoes" data-price="99.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
                                     </div>
@@ -2624,7 +2651,7 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action add-to-cart">
+                                        <button class="btn-action add-to-cart" data-name="Pocket Watch Leather Pouch" data-price="150.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
                                     </div>
@@ -2675,7 +2702,7 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action add-to-cart">
+                                        <button class="btn-action add-to-cart" data-name="Smart watche Vital Plus" data-price="100.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
                                     </div>
@@ -2728,7 +2755,7 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action add-to-cart">
+                                        <button class="btn-action add-to-cart" data-name="Womens Party Wear Shoes" data-price="25.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
                                     </div>
@@ -2779,7 +2806,7 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action add-to-cart">
+                                        <button class="btn-action add-to-cart" data-name="Mens Winter Leathers Jackets" data-price="32.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
                                     </div>
@@ -2832,7 +2859,7 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action add-to-cart">
+                                        <button class="btn-action add-to-cart" data-name="Trekking & Running Shoes - black" data-price="58.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
                                     </div>
@@ -2865,8 +2892,8 @@
                             <div class="showcase">
 
                                 <div class="showcase-banner">
-                                    <img src="./assets/img/products/demo-product.png" alt="Men's Leather Formal Wear shoes"
-                                        class="product-img default" width="300">
+                                    <img src="./assets/img/products/demo-product.png"
+                                        alt="Men's Leather Formal Wear shoes" class="product-img default" width="300">
                                     <img src="./assets/img/products/demo-product.png"
                                         alt="Men's Leather Formal Wear shoes" class="product-img hover" width="300">
 
@@ -2883,7 +2910,7 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action add-to-cart">
+                                        <button class="btn-action add-to-cart" data-name="Men's Leather Formal Wear shoes" data-price="50.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
                                     </div>
@@ -2938,7 +2965,7 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action add-to-cart">
+                                        <button class="btn-action add-to-cart" data-name="Better Basics French Terry Sweatshorts" data-price="78.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
                                     </div>
@@ -2995,14 +3022,13 @@
 
                         <div class="testimonial-card">
 
-                            <img src="./assets/img/Info-PM.png" alt="alan doe" class="testimonial-banner"
-                                width="80" height="80">
+                            <img src="./assets/img/Info-PM.png" alt="alan doe" class="testimonial-banner" width="80"
+                                height="80">
 
                             <p class="testimonial-name">Minh Quang
                             <p class="testimonial-title">CEO & Founder Invision</p>
 
-                            <img src="./assets/img/icons/quotes.svg" alt="quotation" class="quotation-img"
-                                width="26">
+                            <img src="./assets/img/icons/quotes.svg" alt="quotation" class="quotation-img" width="26">
 
                             <p class="testimonial-desc">
                                 Autouch always brings the best products to customers
@@ -3012,7 +3038,7 @@
 
                     </div>
 
-                    <!-- CTA -->
+                    <!-- CTA  (Call to Action) (block này mục đích thu hút người dùng)-->
 
                     <div class="cta-container">
 
@@ -3448,7 +3474,7 @@
                         </div>
 
                         <address class="content">
-                             34 HANG THIEC - P.HANG GAI - Q.HOAN KIEM - HA NOI.
+                            34 HANG THIEC - P.HANG GAI - Q.HOAN KIEM - HA NOI.
                         </address>
                     </li>
 

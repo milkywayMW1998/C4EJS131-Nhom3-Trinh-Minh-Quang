@@ -1,23 +1,17 @@
-/*-----------------------------------*\
+/*-----------------------------------*/
   #RESPONSIVE
-\*-----------------------------------*/
+/*-----------------------------------*/
 
 
-/**
- * responsive larger than 480px screen
- */
+ /* responsive larger than 480px screen */
 
  @media (min-width: 480px) {
 
-    /**
-     * #CUSTOM PROPERTY
-     */
+    /* CUSTOM PROPERTY */
   
     :root {
   
-      /**
-       * typography 
-       */
+      /* typography */
   
       --fs-1: 1.875rem;
   
@@ -25,9 +19,7 @@
   
   
   
-    /**
-     * #HEADER
-     */
+    /* HEADER */
   
     .header-top {
       display: block;
@@ -57,9 +49,7 @@
   
   
   
-    /**
-     * #BANNER
-     */
+    /* BANNER */
   
     .slider-item { aspect-ratio: 5 / 3; }
   
@@ -89,9 +79,7 @@
   
   
   
-    /**
-     * #PRODUCT 
-     */
+    /* PRODUCT */
   
     .product-grid {
       -ms-grid-columns: 1fr 30px 1fr;
@@ -101,9 +89,7 @@
   
   
   
-    /**
-     * #CTA
-     */
+    /* CTA */
   
     .cta-content { padding: 40px; }
   
@@ -120,9 +106,7 @@
   
   
   
-    /**
-     * #FOOTER
-     */
+    /* FOOTER */
   
     .copyright { --fs-8: 0.875rem; }
   
@@ -132,15 +116,11 @@
   
   
   
-  /**
-   * responsive larger than 570px screen
-   */
+  /* responsive larger than 570px screen */
   
   @media (min-width: 570px) {
   
-    /**
-     * #HEADER
-     */
+    /* HEADER */
   
     .header-top .container,
     .header-main .container {
@@ -193,9 +173,7 @@
   
   
   
-    /**
-     * #BANNER
-     */
+    /* BANNER */
   
     .slider-item { aspect-ratio: 4 / 2; }
   
@@ -203,9 +181,7 @@
   
   
   
-    /**
-     * #CATEGORY
-     */
+    /* CATEGORY */
   
     .category-item-container { gap: 30px; }
   
@@ -213,9 +189,7 @@
   
   
   
-    /**
-     * #PRODUCT
-     */
+    /* PRODUCT */
   
     .product-minimal .showcase-container { min-width: 50%; }
   
@@ -228,17 +202,13 @@
   
   
   
-    /**
-     * #CTA
-     */
+    /* CTA */
   
     .cta-container { aspect-ratio: 6 / 5; }
   
   
   
-    /**
-     * #BLOG
-     */
+    /* BLOG */
   
     .blog-container { gap: 30px; }
   
@@ -250,21 +220,15 @@
   
   
   
-  /**
-   * responsive larger than 768px screen
-   */
+  /* responsive larger than 768px screen */
   
   @media (min-width: 768px) {
   
-    /**
-     * #CUSTOM PROPERTY
-     */
+    /* CUSTOM PROPERTY */
   
     :root {
   
-      /**
-       * typography 
-       */
+      /* typography */
   
       --fs-1: 2.375rem;
   
@@ -272,17 +236,13 @@
   
   
   
-    /**
-     * #BASE 
-     */
+    /* BASE */
   
     html { font-size: 17px; }
   
   
   
-    /**
-     * #REUSED STYLE 
-     */
+    /* REUSED STYLE */
   
     .container {
       max-width: 750px;
@@ -291,9 +251,7 @@
   
   
     
-    /**
-     * #MODAL 
-     */
+    /* MODAL */
   
     .modal-content {
       display: -webkit-box;
@@ -316,9 +274,7 @@
   
   
   
-    /**
-     * #HEADER 
-     */
+    /* HEADER */
   
     .header-main .container { gap: 80px; }
   
@@ -326,9 +282,7 @@
   
   
   
-    /**
-     * #BANNER 
-     */
+    /* BANNER */
   
     .slider-item {
       aspect-ratio: auto;
@@ -347,17 +301,13 @@
   
   
   
-    /**
-     * #CATEGORY 
-     */
+    /* PRODUCT */
   
     .category-img-box { padding: 20px; }
   
   
   
-    /**
-     * #PRODUCT 
-     */
+    /* PRODUCT */
   
     .product-minimal {
       display: -webkit-box;
@@ -409,9 +359,7 @@
   
   
   
-    /**
-     * #FOOTER 
-     */
+    /* FOOTER */
   
     .footer-nav .container {
       display: -webkit-box;
@@ -446,21 +394,16 @@
   
   
   
-  /**
-   * responsive larger than 1024px screen
-   */
+  /* responsive larger than 1024px screen */
+
   
   @media (min-width: 1024px) {
   
-    /**
-     * #CUSTOM PROPERTY
-     */
+    /* CUSTOM PROPERTY */
   
     :root {
   
-      /**
-       * typography 
-       */
+      /* typography */
   
       --fs-1: 2.625rem;
       --fs-2: 1.125rem;
@@ -469,25 +412,19 @@
   
   
   
-    /**
-     * #REUSED STYLE 
-     */
+    /*REUSED STYLE*/
   
     .container { max-width: 980px; }
   
   
   
-    /**
-     * #NOTIFICATION TOAST 
-     */
+    /* NOTIFICATION TOAST */
   
     .notification-toast { bottom: 30px; }
   
   
   
-    /**
-     * #HEADER 
-     */
+    /* HEADER */
   
     .header-social-container {
       display: -webkit-box;
@@ -724,9 +661,7 @@
   
   
   
-    /**
-     * #BANNER 
-     */
+    /* BANNER */
   
     .banner { margin-top: 0; }
   
@@ -745,9 +680,7 @@
   
   
   
-    /**
-     * #CATEGORY 
-     */
+    /* CATEGORY */
   
     .category-item { min-width: -webkit-calc(33.33% - 20px); min-width: calc(33.33% - 20px); }
   
@@ -755,9 +688,7 @@
   
   
   
-    /**
-     * #PRODUCT 
-     */
+    /* PRODUCT */
   
     .product-container .container {
       position: relative;
@@ -827,9 +758,7 @@
   
   
   
-    /**
-     * #TESTIMONIALS, CTA & SERVICE 
-     */
+    /* TESTIMONIALS, CTA & SERVICE  */
   
     .testimonials-box {
       display: -webkit-box;
@@ -872,9 +801,7 @@
   
   
   
-    /**
-     * #BLOG
-     */
+    /* BLOG */
   
     .blog-card { min-width: -webkit-calc(33.33% - 20px); min-width: calc(33.33% - 20px); }
   
@@ -882,9 +809,7 @@
   
   
   
-    /**
-     * #FOOTER
-     */
+    /* FOOTER */
   
     .footer-nav-list {
       min-width: -webkit-calc(20% - 16px);
@@ -903,39 +828,29 @@
   
   
   
-  /**
-   * responsive larger than 1200px screen
-   */
+  /* responsive larger than 1200px screen */
   
   @media (min-width: 1200px) {
   
-    /**
-     * #REUSED STYLE 
-     */
+    /* REUSED STYLE */
   
     .container { max-width: 1200px; }
   
   
   
-    /**
-     * #HEADER
-     */
+    /* HEADER */
   
     .desktop-menu-category-list { gap: 45px; }
   
   
   
-    /**
-     * #BANNER
-     */
+    /* BANNER */
   
     .slider-item:last-child .banner-img { -o-object-position: top; object-position: top; }
   
   
   
-    /**
-     * #CATEGORY
-     */
+    /* CATEGORY */
   
     .category-item { min-width: -webkit-calc(25% - 22.5px); min-width: calc(25% - 22.5px); }
   
@@ -943,9 +858,7 @@
   
   
   
-    /**
-     * #PRODUCT
-     */
+    /* PRODUCT */
   
     .product-featured .showcase > div { min-width: -webkit-calc(50% - 10px); min-width: calc(50% - 10px); }
   
@@ -955,9 +868,7 @@
   
   
   
-    /**
-     * #TESTIMONIALS, CTA, SERVICE
-     */
+    /* TESTIMONIALS, CTA, SERVICE */
   
     .testimonial, .service {
       min-width: -webkit-calc(25% - 20px);
@@ -994,9 +905,7 @@
   
   
   
-    /**
-     * #BLOG
-     */
+    /* BLOG */
   
     .blog { margin-bottom: 50px; }
     
@@ -1004,9 +913,7 @@
   
   
   
-    /**
-     * #FOOTER
-     */
+    /* FOOTER */
   
     footer { padding-top: 50px; }
   
@@ -1023,31 +930,23 @@
   
   
   
-  /**
-   * responsive larger than 1400px screen
-   */
+  /* responsive larger than 1400px screen */
   
   @media (min-width: 1400px) {
   
-    /**
-     * #BASE 
-     */
+    /* BASE */
   
     html { font-size: 18px; }
   
   
   
-    /**
-     * #REUSED STYLE 
-     */
+    /* REUSED STYLE */
   
     .container { max-width: 1350px; }
   
   
   
-    /**
-     * #BANNER
-     */
+    /* BANNER */
   
     .slider-item { height: 450px; }
   

@@ -115,10 +115,10 @@ var shoppingCart = (function() {
   }
   
   var obj = {};
-  // Add to cart
-  
+  // Add to cart (function đếm Add Item cart)
   obj.addItemToCart = function(name, price, count) {
   for(var item in cart) {
+    console.log(item);
     if(cart[item].name === name) {
       cart[item].count ++;
       saveCart();
@@ -130,7 +130,16 @@ var shoppingCart = (function() {
     saveCart();
   }
 
-  // Count cart 
+  // Total All Cart
+  obj.totalCart = function(){
+     var totalCart = 0;
+     for(var item in cart) {
+      totalCart += cart[item].price * cart[item].count;
+    }
+    return Number(totalCart.toFixed(2));
+  }
+
+  // Count cart  (function đếm Item cart)
   obj.totalCount = function() {
     var totalCount = 0;
     for(var item in cart) {
@@ -139,12 +148,59 @@ var shoppingCart = (function() {
     return totalCount;
   }
 
+// Remove item cart (dùng cho button giảm số lượng item)
+obj.removeItemCart = function (name) {
+   for(var item in cart){
+     if(cart[item].name === name){
+        cart[item].count --;
+        if(cart[item].count === 0){
+            cart.splice(item, 1);
+        }
+        break;
+     }
+   }
+}
+
+// Remove All item cart ( delete tất cả item của sản phẩm đã chọn)
+obj.removeAllItemCart = function(name){
+  for(var item in cart){
+    if(cart[item].name === name){
+       cart.splice(item, 1);
+       break;
+    }
+  }
+  saveCart();
+}
+
+// Clear cart
+obj.clearCart = function() {
+  cart = [];
+  saveCart();
+}
+  
+
+//List Cart (get List Item trong cart)
+obj.listCart = function(){
+   var cartItem = [];
+   for(var i in cart){
+     var item = cart[i];
+     var itemCart = {};
+     for(var j in item){
+      itemCart[j] =item[j];
+     }
+     itemCart.total = Number(item.price * item.count).toFixed(2);
+     cartItem.push(itemCart)
+   }
+   return cartItem;
+}
+
+
   return obj;
 })();
 
 
 
-// Event 
+// Events
 $('.add-to-cart').click(function(event) {
   event.preventDefault();
   var name = $(this).data('name');
@@ -154,7 +210,88 @@ $('.add-to-cart').click(function(event) {
 });
 
 function displayCart() {
+  var arrCart = shoppingCart.listCart();
+  console.log(arrCart);
+  var stringContentCart = "";
+    for (var i in arrCart) {
+      stringContentCart += "<tr>"
+      +   "<td>" + arrCart[i].name + "</td>" 
+      +   "<td>(" + arrCart[i].price + ")</td>"
+      +   "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + arrCart[i].name + ">-</button>"
+      +   "<input type='number' class='item-count form-control' data-name='" + arrCart[i].name + "' value='" + arrCart[i].count + "'>"
+      +      "<button class='plus-item btn btn-primary input-group-addon' data-name=" + arrCart[i].name + ">+</button></div></td>"
+      +    "<td>" + arrCart[i].total + "</td>" 
+      +    "<td><button class='delete-item btn btn-danger' data-name=" + arrCart[i].name + ">X</button></td>"
+      
+      +  "</tr>";
+    }
+    
+
+
+  $('.visible-cart').html(stringContentCart);
+  $('.total-cart').html(shoppingCart.totalCart());
   $('.count').html(shoppingCart.totalCount());
 }
 
-displayCart();
+$('.visible-cart').on("click", ".delete-item", function(event) {
+  var name = $(this).data('name')
+  shoppingCart.removeItemFromCartAll(name);
+  displayCart();
+})
+
+
+// - Số lương item
+$('.visible-cart').on("click", ".minus-item", function(event) {
+  var name = $(this).data('name')
+  shoppingCart.removeItemFromCart(name);
+  displayCart();
+})
+// + Số lương item
+$('.visible-cart').on("click", ".plus-item", function(event) {
+  var name = $(this).data('name')
+  shoppingCart.addItemToCart(name);
+  displayCart();
+})
+
+// Item count input
+$('.visible-cart').on("change", ".item-count", function(event) {
+   var name = $(this).data('name');
+   var count = Number($(this).val());
+  shoppingCart.setCountForItem(name, count);
+  displayCart();
+});
+
+
+//button
+
+
+
+
+
+
+// Get the modal
+var cartModal = document.getElementById("cartModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("cart-btn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  cartModal.style.display = "block";
+  displayCart();
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  cartModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == cartModal) {
+    cartModal.style.display = "none";
+  }
+}
