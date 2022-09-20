@@ -258,32 +258,32 @@ $('.visible-cart').on("click", ".delete-item", function(event) {
 
 
 // - Số lương item
-// $('.visible-cart').on("click", ".minus-item", function(event) {
-//   var name = $(this).data('name');
-//   shoppingCart.removeItemCart(name);
-//   displayCart();
-// });
-
-$('minus-item').click(function() {
-  alert("ok");
+$('.visible-cart').on("click", ".minus-item", function(event) {
   var name = $(this).data('name');
   shoppingCart.removeItemCart(name);
   displayCart();
 });
 
-// + Số lương item
-// $('.visible-cart').on("click", ".plus-item", function(event) {
+// $('minus-item').click(function() {
+//   alert("ok");
 //   var name = $(this).data('name');
-//   shoppingCart.addItemToCart(name);
+//   shoppingCart.removeItemCart(name);
 //   displayCart();
 // });
 
-$('plus-item').click(function() {
-  alert("ok");
+// + Số lương item
+$('.visible-cart').on("click", ".plus-item", function(event) {
   var name = $(this).data('name');
   shoppingCart.addItemToCart(name);
   displayCart();
 });
+
+// $('plus-item').click(function() {
+//   alert("ok");
+//   var name = $(this).data('name');
+//   shoppingCart.addItemToCart(name);
+//   displayCart();
+// });
 
 // Item count input
 $('.visible-cart').on("change", ".item-count", function(event) {
