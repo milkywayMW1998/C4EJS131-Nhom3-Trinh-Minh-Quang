@@ -765,12 +765,12 @@
 
         <div class="mini-cart has-scrollbar" data-mini-cart>
              <div class="header-cart">
-                    <div>Your Shopping Cart</div> 
+                    <div style="border-left: 5px solid; padding: 10px; font-weight: 600;">Your Shopping Cart</div> 
                     <button class="menu-close-btn" data-close-btn-cart>
                     <ion-icon name="close-outline" role="img" class="md hydrated" aria-label="close outline"></ion-icon>
              </div>
-             <div class="cart-empty">
-                <img src="./assets/img/icons/NoItemsCart.svg" alt="">
+             <div class="cart-empty" style="display: none">
+                <img src="./assets/img/icons/NoItemsCart.svg" alt="" class="empty-cart-img">
                 <p class="empty_cart" style="font-size: 24px;">Your Cart is Empty</p>
                 <p class="sub_title_empty_cart" style="font-size: 24px;">Let's fill up with lovely items</p>
                 <div style="display: flex;flex-direction: column;gap: 20px; margin-top:40px;"> 
@@ -778,9 +778,126 @@
                     <a class="go-to-best-seller-btn" href="#"><span>Go to Best Seller</span></a>
                 </div>
              </div>
-             <div class="item-cart">
-               
-             </div>
+             <div class="showcase-wrapper">
+
+                <div class="showcase-container">
+
+                    <div class="showcase">
+
+                        <a href="#" class="showcase-img-box">
+                            <img src="./assets/img/products/demo-product.png" alt="baby fabric shoes" class="showcase-img" width="75" height="75">
+                        </a>
+
+                        <div class="showcase-content">
+
+                            <a href="#">
+                                <h4 class="showcase-title">baby fabric shoes</h4>
+                            </a>
+
+                            <div class="showcase-rating">
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                            </div>
+
+                            <div class="price-box">
+                                <del>$5.00</del>
+                                <p class="price">$4.00</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="showcase">
+
+                        <a href="#" class="showcase-img-box">
+                            <img src="./assets/img/products/demo-product.png" alt="men's hoodies t-shirt" class="showcase-img" width="75" height="75">
+                        </a>
+
+                        <div class="showcase-content">
+
+                            <a href="#">
+                                <h4 class="showcase-title">men's hoodies t-shirt</h4>
+                            </a>
+                            <div class="showcase-rating">
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star-half-outline" role="img" class="md hydrated" aria-label="star half outline"></ion-icon>
+                            </div>
+
+                            <div class="price-box">
+                                <del>$17.00</del>
+                                <p class="price">$7.00</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="showcase">
+
+                        <a href="#" class="showcase-img-box">
+                            <img src="./assets/img/products/demo-product.png" alt="girls t-shirt" class="showcase-img" width="75" height="75">
+                        </a>
+
+                        <div class="showcase-content">
+
+                            <a href="#">
+                                <h4 class="showcase-title">girls t-shirt</h4>
+                            </a>
+                            <div class="showcase-rating">
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star-half-outline" role="img" class="md hydrated" aria-label="star half outline"></ion-icon>
+                            </div>
+
+                            <div class="price-box">
+                                <del>$5.00</del>
+                                <p class="price">$3.00</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="showcase">
+
+                        <a href="#" class="showcase-img-box">
+                            <img src="./assets/img/products/demo-product.png" alt="woolen hat for men" class="showcase-img" width="75" height="75">
+                        </a>
+
+                        <div class="showcase-content">
+
+                            <a href="#">
+                                <h4 class="showcase-title">woolen hat for men</h4>
+                            </a>
+                            <div class="showcase-rating">
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                                <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+                            </div>
+
+                            <div class="price-box">
+                                <del>$15.00</del>
+                                <p class="price">$12.00</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
         </div>
     </header>
     <!-- Main là phần thân trang, nó thường được dùng để chứa các nội dung chính của trang web. -->
