@@ -1,19 +1,32 @@
-'use strict';
-
 // modal variables
-const modal = document.querySelector('[data-modal]');
-const modalCloseBtn = document.querySelector('[data-modal-close]');
-const modalCloseOverlay = document.querySelector('[data-modal-overlay]');
+// const modal = document.querySelector('[data-modal]');
+// const modalCloseBtn = document.querySelector('[data-modal-close]');
+// const modalCloseOverlay = document.querySelector('[data-modal-overlay]');
 
-// modal function
-const modalCloseFunc = function () { modal.classList.add('closed') }
+// // modal function
+// const modalCloseFunc = function () { modal.classList.add('closed') }
 
-// modal eventListener
-modalCloseOverlay.addEventListener('click', modalCloseFunc);
-modalCloseBtn.addEventListener('click', modalCloseFunc);
+// // modal eventListener
+// modalCloseOverlay.addEventListener('click', modalCloseFunc);
+// modalCloseBtn.addEventListener('click', modalCloseFunc);
 
+// Close button to close modal
+const closeButtons = document.getElementsByClassName("modal-close-btn");
+for (const button of closeButtons) {
+  button.addEventListener("click", function () {
+    const modal = button.parentElement.parentElement;
+    modal.style.display = "none";
+  });
+}
 
-
+// Click overlay to close modal
+const overlayDivs = document.getElementsByClassName("modal-close-overlay");
+for (const overlayDiv of overlayDivs) {
+  overlayDiv.addEventListener("click", function () {
+    const modal = overlayDiv.parentElement;
+    modal.style.display = "none";
+  });
+}
 
 
 // notification toast variables
@@ -24,10 +37,6 @@ const toastCloseBtn = document.querySelector('[data-toast-close]');
 toastCloseBtn.addEventListener('click', function () {
   notificationToast.classList.add('closed');
 });
-
-
-
-
 
 // mobile menu variables
 const mobileMenuOpenBtn = document.querySelectorAll('[data-mobile-menu-open-btn]');
@@ -54,7 +63,28 @@ for (let i = 0; i < mobileMenuOpenBtn.length; i++) {
 }
 
 
+// click show and close mini cart
+const openBtnCart = document.querySelectorAll('[data-open-btn-cart]');
+const miniCart = document.querySelectorAll('[data-mini-cart]');
+const closeBtnCart = document.querySelectorAll('[data-close-btn-cart]');
+const overlayCart = document.querySelector('[data-overlay]');
+for (let i = 0; i < openBtnCart.length; i++) {
 
+  // mobile menu function
+  const closeBtnCartFunc = function () {
+    miniCart[i].classList.remove('active');
+    overlayCart.classList.remove('active');
+  }
+
+  openBtnCart[i].addEventListener('click', function () {
+    miniCart[i].classList.add('active');
+    overlayCart.classList.add('active');
+  });
+
+  closeBtnCart[i].addEventListener('click', closeBtnCartFunc);
+  overlayCart.addEventListener('click', closeBtnCartFunc);
+
+}
 
 
 // accordion variables
@@ -264,26 +294,12 @@ $('.visible-cart').on("click", ".minus-item", function(event) {
   displayCart();
 });
 
-// $('minus-item').click(function() {
-//   alert("ok");
-//   var name = $(this).data('name');
-//   shoppingCart.removeItemCart(name);
-//   displayCart();
-// });
-
 // + Số lương item
 $('.visible-cart').on("click", ".plus-item", function(event) {
   var name = $(this).data('name');
   shoppingCart.addItemToCart(name);
   displayCart();
 });
-
-// $('plus-item').click(function() {
-//   alert("ok");
-//   var name = $(this).data('name');
-//   shoppingCart.addItemToCart(name);
-//   displayCart();
-// });
 
 // Item count input
 $('.visible-cart').on("change", ".item-count", function(event) {
@@ -293,37 +309,3 @@ $('.visible-cart').on("change", ".item-count", function(event) {
   displayCart();
 });
 
-
-//button
-
-
-
-
-
-
-// Get the modal
-var cartModal = document.getElementById("cartModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("cart-btn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  cartModal.style.display = "block";
-  displayCart();
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  cartModal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == cartModal) {
-    cartModal.style.display = "none";
-  }
-}

@@ -219,7 +219,7 @@ body::-webkit-scrollbar-thumb:hover {
    Modal () 
 \*-----------------------------------*/
 
-.cartModal {
+#cartModal {
   position: fixed;
   top: 0;
   left: 0;
@@ -229,7 +229,7 @@ body::-webkit-scrollbar-thumb:hover {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -242,8 +242,8 @@ body::-webkit-scrollbar-thumb:hover {
   visibility: hidden;
   pointer-events: none;
   z-index: 10;
-  -webkit-animation: popup 1s ease-in-out 5s forwards;
-  animation: popup 1s ease-in-out 5s forwards;
+  /* -webkit-animation: popup 1s ease-in-out 5s forwards;
+  animation: popup 1s ease-in-out 5s forwards; */
 }
 
 .modal {
@@ -1009,6 +1009,35 @@ body::-webkit-scrollbar-thumb:hover {
   background: var(--eerie-black);
 }
 
+/*-----------------------------------*\
+  #Mini Cart
+\*-----------------------------------*/
+
+.mini-cart {
+  background: var(--white);
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  padding: 20px;
+  -webkit-box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+  overflow-y: scroll;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: contain;
+  visibility: hidden;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+  z-index: 20;
+}
+
+.mini-cart.active{
+  right: 0;
+  visibility: visible;
+}
 
 /*-----------------------------------*\
   #CATEGORY
