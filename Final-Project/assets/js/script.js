@@ -3,7 +3,8 @@ const product = [
   {
     id: "1",
     productname: "VOID - MEDIUM/LARGE",
-    description: "<p>-Hand-braided and assembled for a truly custom and one-of-a-kind experience</p></br><p>-Adjustable closure to fit a variety of shapes, sizes and ages</p></br><p>  -Patented barrel for comfort and style  -Patented barrel for comfort and style</p></br><p>-One size fits most wrists, 6' to 7.5' in wrist circumference</p></br><p>-100% polyester feels soft and comfortable against your skin</p></br>",
+    description:
+      "<p>-Hand-braided and assembled for a truly custom and one-of-a-kind experience</p></br><p>-Adjustable closure to fit a variety of shapes, sizes and ages</p></br><p>  -Patented barrel for comfort and style  -Patented barrel for comfort and style</p></br><p>-One size fits most wrists, 6' to 7.5' in wrist circumference</p></br><p>-100% polyester feels soft and comfortable against your skin</p></br>",
     productimage: "./assets/img/products/demo-product.png",
     price: "$16",
     oldprice: "$20",
@@ -67,7 +68,8 @@ const product = [
   {
     id: "6",
     productname: "KARMA - MEDIUM/LARGE",
-    description:" <p>A symbol that love is love, our I LOVE U bracelet is the perfect gift to yourself (self-love, people) or to anyone else who could use a little extra love, like your bf, gf or bff to name a few. This black braided bracelet features electroplated hardware, a heart logo on barrel and contrast emblems.</p></br>",
+    description:
+      " <p>A symbol that love is love, our I LOVE U bracelet is the perfect gift to yourself (self-love, people) or to anyone else who could use a little extra love, like your bf, gf or bff to name a few. This black braided bracelet features electroplated hardware, a heart logo on barrel and contrast emblems.</p></br>",
     productimage: "./assets/img/products/demo-product.png",
     price: "20",
     oldprice: "13",
@@ -79,7 +81,8 @@ const product = [
   {
     id: "7",
     productname: "MEN'S BRAIDED BRACELET",
-    description: " <p>A symbol that love is love, our I LOVE U bracelet is the perfect gift to yourself (self-love, people) or to anyone else who could use a little extra love, like your bf, gf or bff to name a few. This black braided bracelet features electroplated hardware, a heart logo on barrel and contrast emblems.</p></br>",
+    description:
+      " <p>A symbol that love is love, our I LOVE U bracelet is the perfect gift to yourself (self-love, people) or to anyone else who could use a little extra love, like your bf, gf or bff to name a few. This black braided bracelet features electroplated hardware, a heart logo on barrel and contrast emblems.</p></br>",
     productimage: "./assets/img/products/demo-product.png",
     price: "20",
     oldprice: "18",
@@ -126,7 +129,7 @@ const product = [
     totalview: "810",
     isHot: "flase",
     producttypeid: "3",
-  }
+  },
 ];
 
 const producttype = [
@@ -228,7 +231,7 @@ var shoppingCart = (function () {
   var cart = [];
 
   // Constructor
-  function Item( productimage, productname, price, oldprice, count) {
+  function Item(productimage, productname, price, oldprice, count) {
     this.productimage = productimage;
     this.productname = productname;
     this.price = price;
@@ -251,7 +254,13 @@ var shoppingCart = (function () {
 
   var obj = {};
   // Add to cart (function đếm Add Item cart)
-  obj.addItemToCart = function (productimage, productname, price, oldprice, count) {
+  obj.addItemToCart = function (
+    productimage,
+    productname,
+    price,
+    oldprice,
+    count
+  ) {
     for (var item in cart) {
       if (cart[item].productname === productname) {
         cart[item].count++;
@@ -364,35 +373,53 @@ function displayCart() {
   var stringContentCart = "";
   for (var i in arrCart) {
     stringContentCart +=
-    "<div class='showcase'>"
-       + "<a href='#' class='showcase-img-box'>"
-           + "<img src='" + arrCart[i].productimage + "' alt='baby fabric shoes' class='showcase-img' width='75' height='75'>"
-       + "</a>"
-       + "<div class='showcase-content'>" 
-              + "<a href='#'>"
-                    + "<h4 class='showcase-title'>" + arrCart[i].productname + "</h4>" 
-              + "</a>"
-              + "<div class='showcase-rating'>"
-                    + "<ion-icon name='star' role='img' class='md hydrated' aria-label='star'></ion-icon>"
-                    + "<ion-icon name='star' role='img' class='md hydrated' aria-label='star'></ion-icon>"
-                    + "<ion-icon name='star' role='img' class='md hydrated' aria-label='star'></ion-icon>"
-                    + "<ion-icon name='star' role='img' class='md hydrated' aria-label='star'></ion-icon>"
-                    + "<ion-icon name='star' role='img' class='md hydrated' aria-label='star'></ion-icon>"
-              + "</div>"
-              + "<div style='display: flex; justify-content: space-between;'>"
-                    + "<div class='product-quantity-box'>"
-                        + "<button class='minus-item input-group-addon btn btn-primary' data-productname=" + arrCart[i].productname + ">-</button>"
-                        + "<input type='number' class='item-count form-control' data-productname='" + arrCart[i].productname + "' value='" + arrCart[i].count + "'>"
-                        + "<button class='plus-item btn btn-primary input-group-addon' data-productname=" + arrCart[i].productname + ">+</button>"
-                    + "</div>"
-                    + "<div class='price-box'>"
-                        + "<del> $" + arrCart[i].oldprice +"</del>"
-                        + "<p class='price'>$" + arrCart[i].price + "</p>"
-                        + "<button class='delete-item btn btn-danger' data-productname=" + arrCart[i].productname + ">X</button>"
-                    + "</div>"
-              + "</div>"
-        + "</div>"
-    + "</div>" 
+      "<div class='showcase'>" +
+      "<a href='#' class='showcase-img-box'>" +
+      "<img src='" +
+      arrCart[i].productimage +
+      "' alt='baby fabric shoes' class='showcase-img' width='75' height='75'>" +
+      "</a>" +
+      "<div class='showcase-content'>" +
+      "<a href='#'>" +
+      "<h4 class='showcase-title'>" +
+      arrCart[i].productname +
+      "</h4>" +
+      "</a>" +
+      "<div class='showcase-rating'>" +
+      "<ion-icon name='star' role='img' class='md hydrated' aria-label='star'></ion-icon>" +
+      "<ion-icon name='star' role='img' class='md hydrated' aria-label='star'></ion-icon>" +
+      "<ion-icon name='star' role='img' class='md hydrated' aria-label='star'></ion-icon>" +
+      "<ion-icon name='star' role='img' class='md hydrated' aria-label='star'></ion-icon>" +
+      "<ion-icon name='star' role='img' class='md hydrated' aria-label='star'></ion-icon>" +
+      "</div>" +
+      "<div style='display: flex; justify-content: space-between;'>" +
+      "<div class='product-quantity-box'>" +
+      "<button class='minus-item input-group-addon btn btn-primary' data-productname=" +
+      arrCart[i].productname +
+      ">-</button>" +
+      "<input type='number' class='item-count form-control' data-productname='" +
+      arrCart[i].productname +
+      "' value='" +
+      arrCart[i].count +
+      "'>" +
+      "<button class='plus-item btn btn-primary input-group-addon' data-productname=" +
+      arrCart[i].productname +
+      ">+</button>" +
+      "</div>" +
+      "<div class='price-box'>" +
+      "<del> $" +
+      arrCart[i].oldprice +
+      "</del>" +
+      "<p class='price'>$" +
+      arrCart[i].price +
+      "</p>" +
+      "<button class='delete-item btn btn-danger' data-productname=" +
+      arrCart[i].productname +
+      ">X</button>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>";
   }
 
   $(".visible-cart").html(stringContentCart);
@@ -431,7 +458,9 @@ $(".visible-cart").on("change", ".item-count", function (event) {
 
 // click show and close mini cart
 const openBtnCart = document.querySelectorAll("[data-open-btn-cart]");
-const openBtnMoblieCart = document.querySelectorAll("[data-open-btn-mobile-cart]");
+const openBtnMoblieCart = document.querySelectorAll(
+  "[data-open-btn-mobile-cart]"
+);
 
 const miniCart = document.querySelectorAll("[data-mini-cart]");
 const closeBtnCart = document.querySelectorAll("[data-close-btn-cart]");
@@ -459,56 +488,61 @@ for (let i = 0; i < openBtnCart.length; i++) {
   overlayCart.addEventListener("click", closeBtnCartFunc);
 }
 
+// $(document).ready(function () {
+// console.log(shoppingCart.totalCount);
+//   if (shoppingCart.totalCount == 0) {
+//     var cartEmpty = document.getElementById("cart-empty");
+//     cartEmpty.style.display = "none";
+//   }else{
+//     var cartEmpty = document.getElementById("cart-empty");
+//     cartEmpty.style.display = "block";
+//   }
+// });
 
-var newarrivals = [];
-const blocksNewArrivals = document.getElementById("newArrivals");
+// var newarrivals = [];
+// const blocksNewArrivals = document.getElementById("newArrivals");
 
-//New Arrivals
-    var stringNewArrivals="";
-    for (let i = 0; i < product.length; i++) {
-      
-       if(product[i].isHot == "true"){
-         newarrivals.push(product[i])
-        
-       }
+// //New Arrivals
+//     var stringNewArrivals="";
+//     for (let i = 0; i < product.length; i++) {
 
-       
-    }
-    
-    for (let j = 0; j < newarrivals.length; j += 4) {
-      let newContainer = document.createElement("div");
-      newContainer.classList.add('showcase-container');
-      var arr = "";
-      arr = newarrivals.slice(j, j + 4);
+//        if(product[i].isHot == "true"){
+//          newarrivals.push(product[i])
 
-      console.log(arr);
-        for (let q = 0; q < arr.length; q++) {
-          stringNewArrivals += "<div class='showcase'>"
-                       + "<a href='#' class='showcase-img-box'>"
-                                  + "<img src=" + newarrivals[q].productimage + " alt='running & trekking shoes - white' class='showcase-img' width='70'>"
-                       + "</a>"
-                       + "<div class='showcase-content'>"
-                             + "<a href='#'>"
-                                   + "<h4 class='showcase-title'>" + newarrivals[q].productname + "</h4>"
-                             + "</a>"
-                             + "<a href='#' class='showcase-category'>Bracelet</a>"
-                             + "<div class='price-box'>"
-                                + "<p class='price'>$" + newarrivals[q].price + "</p>"
-                             + "</div>"
-                       + "</div>"
-                    + "</div>"
+//        }
 
-                    $("#showcase-container-col").html(stringNewArrivals);
-                    $("#newArrivals").html(newContainer);
+//     }
 
-        }
-        
+//     for (let j = 0; j < newarrivals.length; j += 4) {
+//       let newContainer = document.createElement("div");
+//       newContainer.classList.add('showcase-container');
+//       var arr = "";
+//       arr = newarrivals.slice(j, j + 4);
 
-       }
-     
+//       console.log(arr);
+//         for (let q = 0; q < arr.length; q++) {
+//           stringNewArrivals += "<div class='showcase'>"
+//                        + "<a href='#' class='showcase-img-box'>"
+//                                   + "<img src=" + newarrivals[q].productimage + " alt='running & trekking shoes - white' class='showcase-img' width='70'>"
+//                        + "</a>"
+//                        + "<div class='showcase-content'>"
+//                              + "<a href='#'>"
+//                                    + "<h4 class='showcase-title'>" + newarrivals[q].productname + "</h4>"
+//                              + "</a>"
+//                              + "<a href='#' class='showcase-category'>Bracelet</a>"
+//                              + "<div class='price-box'>"
+//                                 + "<p class='price'>$" + newarrivals[q].price + "</p>"
+//                              + "</div>"
+//                        + "</div>"
+//                     + "</div>"
 
+//                     $("#showcase-container-col").html(stringNewArrivals);
+//                     $("#newArrivals").html(newContainer);
+
+//         }
+
+//        }
 
 const blocktrending = document.querySelector("[data-trending]");
 
 const blocktoprated = document.querySelector("[data-top-rated]");
-

@@ -974,7 +974,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .banner-subtitle {
-  color: var(--eerie-black);
+  /* color: var(--eerie-black); */
+  color: #fff;
   font-size: var(--fs-7);
   font-weight: var(--weight-500);
   text-transform: capitalize;
@@ -983,7 +984,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .banner-title {
-  color: var(--eerie-black);
+  /* color: var(--eerie-black); */
+  color: #fff;
   font-size: var(--fs-1);
   text-transform: uppercase;
   line-height: 1;
@@ -1169,7 +1171,6 @@ body::-webkit-scrollbar-thumb:hover {
   align-items: center;
   gap: 15px;
 }
-
 
 /*-----------------------------------*\
   #Product Quantity
